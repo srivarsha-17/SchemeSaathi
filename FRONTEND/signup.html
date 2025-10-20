@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup Page</title>
+<style>
+body { font-family: "Segoe UI", sans-serif; background: #f4f6f9; height: 100vh; margin: 0; display: flex; justify-content: center; align-items: center; }
+.signup-box { background: #fff; padding: 40px 35px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 400px; text-align: center; position: relative; }
+.language-switch { position: absolute; top: 15px; right: 15px; cursor: pointer; padding: 6px 12px; background: #2980b9; color: white; border-radius: 5px; font-size: 12px; }
+.signup-box h2 { margin-bottom: 25px; color: #2c3e50; font-weight: 600; }
+.signup-box input, .signup-box select { width: 100%; padding: 12px 14px; margin: 12px 0; border: 1px solid #dcdde1; border-radius: 6px; font-size: 14px; outline: none; }
+.signup-box input:focus, .signup-box select:focus { border-color: #2980b9; }
+.signup-box button { width: 100%; padding: 12px; background: #2980b9; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 15px; }
+.signup-box button:hover { background: #1f6391; }
+.signup-box p { margin-top: 18px; font-size: 14px; color: #555; }
+.signup-box a { color: #2980b9; text-decoration: none; }
+.signup-box a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="signup-box">
+  <div class="language-switch" onclick="switchLanguage()">తెలుగు</div>
+  <h2 id="title">Create Account</h2>
+
+  <form id="signupForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <select id="category" required>
+      <option value="">Select Category</option>
+      <option value="Student">Student</option>
+      <option value="Farmer">Farmer</option>
+      <option value="Graduate">Graduate</option>
+      <option value="Other">Other</option>
+    </select>
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <p id="loginText">Already have an account? <a href="loginpage.html" id="loginLink">Login</a></p>
+</div>
+
+<script>
+let currentLang = 'en';
+const translations = {
+  en: {
+    title: "Create Account",
+    name: "Full Name",
+    email: "Email",
+    password: "Password",
+    category: "Select Category",
+    student: "Student",
+    farmer: "Farmer",
+    graduate: "Graduate",
+    other: "Other",
+    signupBtn: "Sign Up",
+    loginText: "Already have an account? ",
+    loginLink: "Login",
+    switchText: "తెలుగు"
+  },
+  te: {
+    title: "ఖాతాను సృష్టించండి",
+    name: "పూర్తి పేరు",
+    email: "ఇమెయిల్",
+    password: "పాస్వర్డ్",
+    category: "వర్గాన్ని ఎంచుకోండి",
+    student: "విద్యార్థి",
+    farmer: "వ్యవసాయి",
+    graduate: "గ్రాడ్యుయేట్",
+    other: "ఇతరులు",
+    signupBtn: "సైన్ అప్",
+    loginText: "ఇప్పుడే ఖాతా ఉందా? ",
+    loginLink: "లాగిన్",
+    switchText: "English"
+  }
+};
+
+function switchLanguage() {
+  currentLang = currentLang === 'en' ? 'te' : 'en';
+  const t = translations[currentLang];
+
+  document.getElementById('title').innerText = t.title;
+  document.getElementById('name').placeholder = t.name;
+  document.getElementById('email').placeholder = t.email;
+  document.getElementById('password').placeholder = t.password;
+
+  const categorySelect = document.getElementById('category');
+  categorySelect.options[0].text = t.category;
+  categorySelect.options[1].text = t.student;
+  categorySelect.options[2].text = t.farmer;
+  categorySelect.options[3].text = t.graduate;
+  categorySelect.options[4].text = t.other;
+
+  document.querySelector('button').innerText = t.signupBtn;
+  document.getElementById('loginText').textContent = t.loginText;
+  document.getElementById('loginText').appendChild(document.getElementById('loginLink'));
+  document.getElementById('loginLink').innerText = t.loginLink;
+  document.querySelector('.language-switch').innerText = t.switchText;
+}
+
+// Signup form submission
+document.getElementById("signupForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const category = document.getElementById("category").value;
+
+  if (!name || !email || !password || !category) {
+    alert("All fields are required!");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/api/auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password, category })
+    });
+
+    const data = await res.json();
+    if (res.ok) {
+  localStorage.setItem("token", data.token);
+  localStorage.setItem("category", category); // Store category for next page
+  alert("Signup successful! Redirecting...");
+  window.location.href = "mainpage.html";
+}
+
+    else {
+      alert(data.msg || "Signup failed");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Server error. Check backend.");
+  }
+});
+</script>
+
+</body>
+</html>
+

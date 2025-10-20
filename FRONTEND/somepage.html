@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Related Schemes</title>
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: #eef3f8;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background: #2980b9;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .language-switch {
+    background: white;
+    color: #2980b9;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .schemes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 25px;
+    padding: 30px;
+  }
+
+  .scheme-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .scheme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  .scheme-card h2 {
+    color: #1f6fa8;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .scheme-card p {
+    color: #333;
+    margin: 6px 0;
+    line-height: 1.5;
+  }
+
+  .scheme-card strong {
+    color: #555;
+  }
+
+  .scheme-links {
+    margin-top: 10px;
+  }
+
+  .scheme-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .scheme-links a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="pageTitle">Related Schemes</h1>
+  <div class="language-switch" onclick="switchLanguage()">తెలుగు</div>
+</header>
+
+<div class="schemes-container" id="schemesContainer"></div>
+
+<script>
+let currentLang = 'en';
+
+function switchLanguage() {
+  currentLang = currentLang === 'en' ? 'te' : 'en';
+  document.querySelector('.language-switch').innerText =
+    currentLang === 'en' ? "తెలుగు" : "English";
+  fetchSchemes();
+}
+
+async function fetchSchemes() {
+  const container = document.getElementById('schemesContainer');
+  container.innerHTML = "<p>Loading schemes...</p>";
+
+  const token = localStorage.getItem("token");
+  const category = localStorage.getItem("category");
+
+  if (!token || !category) {
+    container.innerHTML = "<p>Please login first.</p>";
+    return;
+  }
+
+  try {
+    const res = await fetch(`http://localhost:5000/api/schemes/${category}?lang=${currentLang}`, {
+      headers: { "Authorization": `Bearer ${token}` }
+    });
+
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new Error("Invalid JSON response from server");
+    }
+
+    const schemes = await res.json();
+
+    if (!schemes.length) {
+      container.innerHTML = "<p>No schemes found for your category.</p>";
+      return;
+    }
+
+    container.innerHTML = "";
+    schemes.forEach(scheme => {
+      const card = document.createElement("div");
+      card.classList.add("scheme-card");
+
+      card.innerHTML = `
+        <h2>${scheme.title || "Untitled Scheme"}</h2>
+        <p><strong>Description:</strong> ${scheme.description || "Not available"}</p>
+        <p><strong>Eligibility:</strong> ${scheme.eligibility || "Not available"}</p>
+        <p><strong>Category:</strong> ${scheme.category || "Not specified"}</p>
+        <p><strong>Department:</strong> ${scheme.department || "Not available"}</p>
+        <p><strong>Benefits:</strong> ${scheme.benefits || "Not available"}</p>
+        <div class="scheme-links">
+          ${scheme.youtubeLink ? `<a href="${scheme.youtubeLink}" target="_blank">🎥 Watch Video</a>` : ''}
+          ${scheme.portalLink ? `<a href="${scheme.portalLink}" target="_blank">🔗 Visit Portal</a>` : ''}
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    container.innerHTML = `<p style="color:red;">Error loading schemes: ${err.message}</p>`;
+    console.error(err);
+  }
+}
+
+fetchSchemes();
+</script>
+</body>
+</html>

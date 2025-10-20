@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchemeSaathi - Main Page</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f6f9;
+      overflow: hidden;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2980b9;
+      padding: 12px 20px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .header-left h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .profile-icon {
+        position : fixed;
+        right : 100px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #2980b9;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .language-switch {
+      padding: 6px 12px;
+      background-color: white;
+      color: #2980b9;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* Find Related Schemes */
+    .related-btn {
+      margin: 18px auto;
+      display: flex;
+      justify-content: center;
+    }
+    .related-btn button {
+      background: linear-gradient(135deg, #2980b9, #3498db);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, background 0.3s;
+    }
+    .related-btn button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #1f6391, #2471a3);
+    }
+
+    /* Carousel */
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin-top: 14px;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+    .carousel-item {
+      min-width: 100%;
+      height: calc(100vh - 120px); /* Adjusted for header + button */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 20px 10%;
+      box-sizing: border-box;
+      background: white;
+    }
+    .carousel-item img {
+      width: 45%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .carousel-text {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .carousel-text h2 {
+      font-size: 32px;
+      color: #2980b9;
+      margin: 0;
+    }
+    .carousel-text p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Carousel buttons */
+    .carousel-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .carousel-buttons button {
+      pointer-events: all;
+      background-color: rgba(41, 128, 185, 0.8);
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .carousel-buttons button:hover {
+      background-color: rgba(31, 99, 145, 0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Please login first!");
+    window.location.href = "login.html";
+  }
+</script>
+
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <h1 id="teamHeading">SchemeSaathi</h1>
+      <div class="profile-icon" onclick="goToProfile()">P</div>
+    </div>
+    <div class="language-switch" onclick="switchLanguage()">తెలుగు</div>
+  </header>
+
+  <!-- Find Related Schemes Button -->
+  <div class="related-btn">
+    <button onclick="goToRelatedSchemes()">🔎 Find Related Schemes</button>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Slide 1 -->
+      <div class="carousel-item" data-en-title="Rythu Bandhu Scheme" data-te-title="రైతు బంధు స్కీమ్"
+           data-en-desc="Financial support provided to farmers in Telangana to encourage investment in agriculture. Direct cash transfers are made to eligible farmers."
+           data-te-desc="తెలంగాణ రైతులకు వ్యవసాయం పెట్టుబడి చేయడానికి ఆర్థిక మద్దతు. అర్హులైన రైతులకు నేరుగా నగదు రవాణాలు చేయబడతాయి.">
+        <img src="rythu_bandhu_scheme.jpg" alt="Rythu Bandhu">
+        <div class="carousel-text">
+          <h2>Rythu Bandhu Scheme</h2>
+          <p>Financial support provided to farmers in Telangana to encourage investment in agriculture. Direct cash transfers are made to eligible farmers.</p>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" data-en-title="Student Scholarship" data-te-title="విద్యార్థి స్కాలర్‌షిప్"
+           data-en-desc="State government scholarships for meritorious and financially disadvantaged students, enabling access to education and skill development programs."
+           data-te-desc="మేధావి మరియు ఆర్థికంగా వంచిత విద్యార్థులకు రాష్ట్ర ప్రభుత్వం స్కాలర్‌షిప్‌లు, విద్య మరియు నైపుణ్య అభివృద్ధి కార్యక్రమాలకు ప్రాప్తి కల్పించుట.">
+        <img src="scholarship.jfif" alt="Student Scholarship">
+        <div class="carousel-text">
+          <h2>Student Scholarship</h2>
+          <p>State government scholarships for meritorious and financially disadvantaged students, enabling access to education and skill development programs.</p>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item" data-en-title="Aarogyasri Health Scheme" data-te-title="ఆరోగ్యశ్రీ ఆరోగ్య పథకం"
+           data-en-desc="Provides free medical treatment to eligible families, covering serious illnesses and surgeries at government and empaneled private hospitals."
+           data-te-desc="అర్హత కలిగిన కుటుంబాలకు ఉచిత వైద్య చికిత్స అందిస్తుంది, ప్రభుత్వం మరియు అనుమతిపెట్టిన ప్రైవేట్ హాస్పిటల్స్‌లో తీవ్ర రోగాలు మరియు శస్త్రచికిత్సలను కవర్ చేస్తుంది.">
+        <img src="rajiv-aarogyasri-scheme.jpg" alt="Aarogyasri Health">
+        <div class="carousel-text">
+          <h2>Aarogyasri Health Scheme</h2>
+          <p>Provides free medical treatment to eligible families, covering serious illnesses and surgeries at government and empaneled private hospitals.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel Buttons -->
+    <div class="carousel-buttons">
+      <button onclick="prevSlide()">&#10094;</button>
+      <button onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+
+  <script>
+    function goToProfile() { alert("Go to profile page"); }
+    function goToRelatedSchemes() {
+      window.location.href = "related-schemes.html"; 
+    }
+
+    // Language switch
+    let currentLang = 'en';
+    function switchLanguage() {
+      currentLang = currentLang === 'en' ? 'te' : 'en';
+
+      const teamHeading = document.getElementById('teamHeading');
+      const langSwitch = document.querySelector('.language-switch');
+      const relatedBtn = document.querySelector('.related-btn button');
+
+      if(currentLang === 'te') {
+        teamHeading.innerText = "టీమ్ సాథి";
+        langSwitch.innerText = "English";
+        relatedBtn.innerText = " సంబంధిత పథకాలు కనుగొనండి";
+      } else {
+        teamHeading.innerText = "Team Saathi";
+        langSwitch.innerText = "తెలుగు";
+        relatedBtn.innerText = " Find Related Schemes";
+      }
+
+      // Update carousel text
+      const items = document.querySelectorAll('.carousel-item');
+      items.forEach(item => {
+        item.querySelector('h2').innerText = currentLang==='en' ? item.dataset.enTitle : item.dataset.teTitle;
+        item.querySelector('p').innerText = currentLang==='en' ? item.dataset.enDesc : item.dataset.teDesc;
+      });
+    }
+
+    // Carousel functionality
+    const track = document.getElementById('carouselTrack');
+    const items = document.querySelectorAll('.carousel-item');
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+    function nextSlide() {
+      index = (index + 1) % items.length;
+      updateCarousel();
+    }
+    function prevSlide() {
+      index = (index - 1 + items.length) % items.length;
+      updateCarousel();
+    }
+    setInterval(() => { nextSlide(); }, 3000);
+  </script>
+</body>
+</html>
