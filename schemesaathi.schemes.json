@@ -1,0 +1,272 @@
+[{
+  "_id": {
+    "$oid": "68f51e47099b913a2f5519fc"
+  },
+  "title": {
+    "en": "Rythu Bharosa Scheme",
+    "te": "రైతు భరోసా పథకం"
+  },
+  "description": {
+    "en": "Financial assistance for farmers including crop insurance, input subsidy, and direct cash support.",
+    "te": "రైతులకు ఆర్థిక మద్దతు, ఫसल బీమా, ఇన్పుట్ సబ్సిడీ మరియు నేరుగా నగదు సహాయం అందించబడుతుంది."
+  },
+  "category": "farmer",
+  "youtubeLink": "https://youtu.be/Qb659Ia1cKs?si=YeyHO5xcJGR91jgG",
+  "portalLink": "https://www.rythubharosa.telangana.gov.in/",
+  "image": "http://localhost:5000/images/rythubharosa.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f5519fd"
+  },
+  "title": {
+    "en": "Rythu Bharosa Plus",
+    "te": "రైతు భరోసా ప్లస్"
+  },
+  "description": {
+    "en": "Enhanced support for small and marginal farmers to cover farming and household costs.",
+    "te": "చిన్న మరియు అతి చిన్న రైతులకు వ్యవసాయం మరియు గృహ ఖర్చులను కవర్ చేయడానికి పెంపొందించిన మద్దతు."
+  },
+  "category": "farmer",
+  "youtubeLink": "https://www.youtube.com/watch?v=za1b2yQ38XY",
+  "portalLink": "https://rythubharosa.ap.gov.in/",
+  "image": "http://localhost:5000/images/rythubharosa1.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f5519fe"
+  },
+  "title": {
+    "en": "Telangana Fasal Bima Yojana",
+    "te": "తెలంగాణ ఫసల్ బీమా యోజన"
+  },
+  "description": {
+    "en": "Crop insurance scheme protecting farmers against crop losses due to natural calamities, pests, or diseases.",
+    "te": "ప్రకృతి విపత్తులు, పీడకలు లేదా వ్యాధుల కారణంగా పంట నష్టాల నుండి రైతులను రక్షించే ఫసల్ బీమా పథకం."
+  },
+  "category": "farmer",
+  "youtubeLink": "https://www.youtube.com/watch?v=4prxcunVPlY",
+  "portalLink": "https://www.telangana.gov.in/FasalBima",
+  "image": "http://localhost:5000/images/fasal.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f5519ff"
+  },
+  "title": {
+    "en": "AP Capital Farmer Scheme",
+    "te": "ఏపీ కాపిటల్ రైతు పథకం"
+  },
+  "description": {
+    "en": "Support for farmers in Andhra Pradesh capital region with subsidized seeds, fertilizers, and guidance.",
+    "te": "ఆంధ్రప్రదేశ్ రాజధాని ప్రాంతంలోని రైతులకు సబ్సిడీ ఉన్న బియ్యం, ఎరువులు మరియు మార్గనిర్దేశం అందించబడుతుంది."
+  },
+  "category": "farmer",
+  "youtubeLink": "https://www.youtube.com/watch?v=ExYwxFBgnfM",
+  "portalLink": "https://www.ap.gov.in/farmer-schemes",
+  "image": "http://localhost:5000/images/capital.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a00"
+  },
+  "title": {
+    "en": "Student Scholarship Scheme",
+    "te": "విద్యార్థి స్కాలర్‌షిప్ పథకం"
+  },
+  "description": {
+    "en": "Scholarships for meritorious students to support their education and skill development.",
+    "te": "ప్రవీణ విద్యార్థుల విద్య మరియు నైపుణ్య అభివృద్ధిని మద్దతు ఇచ్చే స్కాలర్‌షిప్‌లు."
+  },
+  "category": "student",
+  "youtubeLink": "https://youtu.be/TdrIFAcZWXY?si=5yM4sl92CUNMKeBQ",
+  "portalLink": "https://jnanabhumi.ap.gov.in//",
+  "image": "http://localhost:5000/images/scholarship.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a01"
+  },
+  "title": {
+    "en": "Merit Cum Means Scholarship",
+    "te": "మెరిట్ కమ్ మీన్స్ స్కాలర్‌షిప్"
+  },
+  "description": {
+    "en": "Financial aid for students based on academic performance and financial need.",
+    "te": "విద్యార్థుల విద్యా ప్రదర్శన మరియు ఆర్థిక అవసరాల ఆధారంగా ఆర్థిక సహాయం."
+  },
+  "category": "student",
+  "youtubeLink": "https://www.youtube.com/watch?v=scholarship2",
+  "portalLink": "https://studentscholarship.gov.in/",
+  "image": "http://localhost:5000/images/merit.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a02"
+  },
+  "title": {
+    "en": "Post Matric Scholarship",
+    "te": "పోస్ట్ మ్యాట్రిక్ స్కాలర్‌షిప్"
+  },
+  "description": {
+    "en": "Scholarship scheme for students pursuing post-secondary education.",
+    "te": "పోస్ట్-సెకండరీ విద్యను కొనసాగిస్తున్న విద్యార్థుల కోసం స్కాలర్‌షిప్ పథకం."
+  },
+  "category": "student",
+  "youtubeLink": "https://www.youtube.com/watch?v=scholarship3",
+  "portalLink": "https://studentscholarship.gov.in/",
+  "image": "http://localhost:5000/images/postmatric.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a03"
+  },
+  "title": {
+    "en": "National Fellowship Program",
+    "te": "నేషనల్ ఫెలోషిప్ ప్రోగ్రామ్"
+  },
+  "description": {
+    "en": "Provides fellowships to students for higher studies and research projects.",
+    "te": "ముఖ్యంగా ఉన్నత విద్య మరియు పరిశోధన ప్రాజెక్టులకు విద్యార్థులకు ఫెలోషిప్‌లను అందిస్తుంది."
+  },
+  "category": "student",
+  "youtubeLink": "https://www.youtube.com/watch?v=scholarship4",
+  "portalLink": "https://studentscholarship.gov.in/",
+  "image": "http://localhost:5000/images/national.jfif"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a04"
+  },
+  "title": {
+    "en": "Graduate Startup Scheme",
+    "te": "గ్రాడ్యుయేట్ స్టార్ట్‌అప్ పథకం"
+  },
+  "description": {
+    "en": "Supports graduates to start their own business ventures with financial aid.",
+    "te": "స्नాతకులకు ఆర్థిక సహాయం తో వారి స్వంత వ్యాపారాలను ప్రారంభించడానికి మద్దతు."
+  },
+  "category": "graduate",
+  "youtubeLink": "https://www.youtube.com/watch?v=graduate1",
+  "portalLink": "https://graduatestartup.gov.in/",
+  "image": "graduate_startup1.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a05"
+  },
+  "title": {
+    "en": "Skill Development Program",
+    "te": "నైపుణ్య అభివృద్ధి ప్రోగ్రామ్"
+  },
+  "description": {
+    "en": "Training graduates in technical and soft skills to improve employability.",
+    "te": "స్నాతకులను தொழ‌నిక మరియు సాఫ్ట్ స్కిల్స్ లో శిక్షణ అందించటం, ఉద్యోగావకాశాలను మెరుగుపరచటం."
+  },
+  "category": "graduate",
+  "youtubeLink": "https://www.youtube.com/watch?v=graduate2",
+  "portalLink": "https://graduatestartup.gov.in/",
+  "image": "graduate_startup2.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a06"
+  },
+  "title": {
+    "en": "Entrepreneurship Grant",
+    "te": "ఎంట్రప్రెన్యూర్‌షిప్ గ్రాంట్"
+  },
+  "description": {
+    "en": "Financial grant to graduates for innovative business ideas.",
+    "te": "నూతన వ్యాపార ఆలోచనలకు స్నాతకులకు ఆర్థిక గ్రాంట్."
+  },
+  "category": "graduate",
+  "youtubeLink": "https://www.youtube.com/watch?v=graduate3",
+  "portalLink": "https://graduatestartup.gov.in/",
+  "image": "graduate_startup3.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a07"
+  },
+  "title": {
+    "en": "Young Innovators Program",
+    "te": "యంగ్ ఇన్నోవేటర్స్ ప్రోగ్రామ్"
+  },
+  "description": {
+    "en": "Program supporting graduates to develop innovative projects.",
+    "te": "స్నాతకులకు వినూత్న ప్రాజెక్ట్‌లను అభివృద్ధి చేయడానికి మద్దతు."
+  },
+  "category": "graduate",
+  "youtubeLink": "https://www.youtube.com/watch?v=graduate4",
+  "portalLink": "https://graduatestartup.gov.in/",
+  "image": "graduate_startup4.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a08"
+  },
+  "title": {
+    "en": "Mahila E-Haat",
+    "te": "మహిళ ఈ-హాట్"
+  },
+  "description": {
+    "en": "Platform for women entrepreneurs to sell products online.",
+    "te": "మహిళ ఎంట్రప్రెన్యూర్స్ ఉత్పత్తులను ఆన్‌లైన్‌లో అమ్మే వేదిక."
+  },
+  "category": "women",
+  "youtubeLink": "https://www.youtube.com/watch?v=women1",
+  "portalLink": "https://mahilaprojects.gov.in/",
+  "image": "women1.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a09"
+  },
+  "title": {
+    "en": "Self Help Group Support",
+    "te": "సెల్ఫ్ హెల్ప్ గ్రూప్ మద్దతు"
+  },
+  "description": {
+    "en": "Financial and advisory support to women SHGs.",
+    "te": "మహిళల SHGలకు ఆర్థిక మరియు సలహా మద్దతు."
+  },
+  "category": "women",
+  "youtubeLink": "https://www.youtube.com/watch?v=women2",
+  "portalLink": "https://mahilaprojects.gov.in/",
+  "image": "women2.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a0a"
+  },
+  "title": {
+    "en": "Women Entrepreneurship Program",
+    "te": "మహిళ ఎంట్రప్రెన్యూర్‌షిప్ ప్రోగ్రామ్"
+  },
+  "description": {
+    "en": "Program supporting women to start and grow businesses.",
+    "te": "మహిళలు వ్యాపారాలను ప్రారంభించడానికి మరియు పెంపొందించడానికి మద్దతు."
+  },
+  "category": "women",
+  "youtubeLink": "https://www.youtube.com/watch?v=women3",
+  "portalLink": "https://mahilaprojects.gov.in/",
+  "image": "women3.jpg"
+},
+{
+  "_id": {
+    "$oid": "68f51e47099b913a2f551a0b"
+  },
+  "title": {
+    "en": "Women Skill Development",
+    "te": "మహిళల నైపుణ్య అభివృద్ధి"
+  },
+  "description": {
+    "en": "Skill training programs to empower women in various trades.",
+    "te": "వివిధ వృత్తులలో మహిళలను శక్తివంతం చేయడానికి నైపుణ్య శిక్షణ కార్యక్రమాలు."
+  },
+  "category": "women",
+  "youtubeLink": "https://www.youtube.com/watch?v=women4",
+  "portalLink": "https://mahilaprojects.gov.in/",
+  "image": "women4.jpg"
+}]
